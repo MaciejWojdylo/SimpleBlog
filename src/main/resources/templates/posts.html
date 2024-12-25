@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="container">
+    <h2>All Posts</h2>
+    <div th:each="post : ${posts}">
+        <h3 th:text="${post.title}"></h3>
+        <p th:text="${post.content}"></p>
+        <p><small th:text="${#dates.format(post.createdAt, 'HH:mm, dd MMM yyyy')}"></small></p>
+    </div>
+    <a href="/" class="button">Back to Home</a>
+</div>
+</body>
+</html>
